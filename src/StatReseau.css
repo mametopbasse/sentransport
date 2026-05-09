@@ -1,0 +1,6 @@
+.stat-reseau { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+.stat-item { background: #fff; border-left: 4px solid #0a6e31;
+  border-radius: 8px; padding: 12px 20px; text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.stat-chiffre { display: block; font-size: 1.6rem; font-weight: bold; color: #0a6e31; }
+.stat-label { display: block; font-size: 0.85rem; color: #7f8c8d; margin-top: 4px; }
