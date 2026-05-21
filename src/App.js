@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-
+import Carte from './Carte';
 import Header from './Header';
 import Recherche from './Recherche';
 import LigneBus from './LigneBus';
@@ -172,6 +172,8 @@ function App() {
         {ligneSelectionnee && (
           <DetailLigne ligne={ligneSelectionnee} />
         )}
+
+      < Carte />
 
       </main>
 
