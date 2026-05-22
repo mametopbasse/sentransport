@@ -1,0 +1,79 @@
+.meteo {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 350px;
+  font-family: sans-serif;
+
+  .meteo-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .meteo-icone {
+    width: 50px;
+    height: 50px;
+    background: #f0f4f8;
+    border-radius: 50%;
+  }
+
+  .meteo-temp {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a202c;
+  }
+
+  .meteo-desc {
+    display: block;
+    font-size: 0.9rem;
+    color: #718096;
+    text-transform: capitalize;
+  }
+
+  .meteo-humidite {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #4a5568;
+    background: #edf2f7;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  // Gestion des alertes
+  .meteo-alerte {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+
+    &.alerte-pluie {
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+    }
+
+    &.alerte-orage {
+      background: #fff5f5;
+      color: #c53030;
+      border: 1px solid #fed7d7;
+    }
+  }
+
+  &.meteo-erreur {
+    border-left: 4px solid #e53e3e;
+    background: #fff5f5;
+    color: #c53030;
+
+    .meteo-detail {
+      font-size: 0.8rem;
+      color: #9b2c2c;
+      margin-top: 4px;
+    }
+  }
+}

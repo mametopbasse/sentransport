@@ -1,5 +1,5 @@
 import json
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -39,6 +39,32 @@ def get_ligne(ligne_id):
         return jsonify({"erreur": "Ligne non trouvee"}), 404
 
     return jsonify(ligne)
+
+incidents = []
+
+@app.route("/incidents", methods=["GET"])
+def get_incidents():
+    return jsonify(incidents)
+
+@app.route("/incidents", methods=["POST"])
+def post_incident():
+    data = request.get_json()
+    
+    # Validation des champs obligatoires
+    if not data or "ligne" not in data or "description" not in data:
+        return jsonify({"erreur": "Champs requis manquants"}), 400
+
+    # Création du nouvel incident
+    incident = {
+        "id": len(incidents) + 1,
+        "ligne": data["ligne"],
+        "description": data["description"],
+        "lieu": data.get("lieu", "Non précisé"),
+    }
+    
+    incidents.append(incident)
+    return jsonify(incident), 201
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

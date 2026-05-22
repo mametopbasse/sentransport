@@ -5,6 +5,8 @@ import Header from './Header';
 import Recherche from './Recherche';
 import LigneBus from './LigneBus';
 import DetailLigne from './DetailLigne';
+import Meteo from './Meteo';
+import SignalerIncident from './SignalerIncident';
 import Footer from './Footer';
 
 function App() {
@@ -133,6 +135,8 @@ function App() {
 
       <main className="contenu">
 
+        < Meteo />
+
         <Recherche
           valeur={recherche}
           onChange={setRecherche}
@@ -174,6 +178,8 @@ function App() {
         )}
 
       < Carte />
+
+      <SignalerIncident />
 
       </main>
 
